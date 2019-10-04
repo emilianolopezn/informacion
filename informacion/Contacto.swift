@@ -14,6 +14,7 @@ class Contacto {
     var direccion : String?
     var correo : String?
     var foto : String?
+    var edad : Int?
     
     init(nombre : String, telefono : String, direccion : String, correo : String, foto : String) {
         self.nombre = nombre

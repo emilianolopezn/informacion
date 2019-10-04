@@ -20,6 +20,8 @@ class EditarContactoController : UIViewController {
     override func viewDidLoad() {
         txtTelefono.text = contacto!.telefono
         txtNombre.text = contacto!.nombre
+        
+        self.title = contacto!.nombre
     }
     
     @IBAction func doTapGuardar(_ sender: Any) {

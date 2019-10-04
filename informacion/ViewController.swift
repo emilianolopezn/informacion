@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         contactos.append(Contacto(nombre: "Jose", telefono: "(644)4 20 96 54", direccion: "Guerrero 123", correo: "jose@correo.com", foto: "foto1"))
         contactos.append(Contacto(nombre: "María", telefono: "(644)4 85 14 76", direccion: "Ortiz 123", correo: "maria@correo.com", foto: "foto2"))
         contactos.append(Contacto(nombre: "Tania", telefono: "(644)4 96 31 02", direccion: "Morelos 123", correo: "tania@correo.com", foto: "foto3"))
@@ -51,7 +53,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func recargarTabla() {
         tvContactos.reloadData()
     }
-    
+    func agregar(contacto: Contacto) {
+        contactos.append(contacto)
+        tvContactos.reloadData()
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToEditar" {
             let destino = segue.destination as? EditarContactoController
@@ -59,7 +64,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             destino?.callbackActualizarTabla = recargarTabla
             
         }
+        if segue.identifier == "goToNuevo" {
+            let destino = segue.destination as? NuevoContactoController
+            destino?.callbackAgregar = agregar
+            
+        }
     }
 
+   /* @IBAction func doTapAgregar(_ sender: Any) {
+        contactos.append(Contacto(nombre: "Nuevo", telefono: "(644)0 00 00 00", direccion: "Direccio nueva", correo: "correo@correo.com", foto: "foto1"))
+        
+        tvContactos.reloadData()
+    }*/
 }
 

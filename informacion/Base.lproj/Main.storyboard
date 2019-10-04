@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Contactos-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="informacion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Contactos" id="BYZ-38-t0r" customClass="ViewController" customModule="informacion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="opa-Vk-myX"/>
+                    <navigationItem key="navigationItem" id="opa-Vk-myX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="58b-5S-dZG">
+                            <connections>
+                                <segue destination="0A5-89-mWd" kind="show" identifier="goToNuevo" id="FfY-kN-vH3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tvContactos" destination="mO3-F8-uGv" id="5hD-fF-OHy"/>
                     </connections>
@@ -145,6 +151,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SID-8g-B22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1273.913043478261" y="27.455357142857142"/>
+        </scene>
+        <!--Nuevo contacto-->
+        <scene sceneID="T14-P4-YGq">
+            <objects>
+                <viewController title="Nuevo contacto" id="0A5-89-mWd" customClass="NuevoContactoController" customModule="informacion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="akW-9W-Hk1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kPi-Er-uhc">
+                                <rect key="frame" x="20" y="112" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teléfono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFy-pJ-osw">
+                                <rect key="frame" x="20" y="158" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIF-eH-b3c">
+                                <rect key="frame" x="343" y="196" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Guardar"/>
+                                <connections>
+                                    <action selector="doTapGuardar:" destination="0A5-89-mWd" eventType="touchUpInside" id="HQd-Fn-aO6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fFQ-RJ-R51"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtNombre" destination="kPi-Er-uhc" id="VXN-8c-2tV"/>
+                        <outlet property="txtTelefono" destination="NFy-pJ-osw" id="IWe-b1-FML"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arT-jT-J9u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205.7971014492755" y="-659.59821428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gGW-fV-msf">
